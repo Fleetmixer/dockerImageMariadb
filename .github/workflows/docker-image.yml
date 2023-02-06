@@ -25,4 +25,6 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
     - name: Push the Docker image latest  
       run: docker push ghcr.io/fleetmixer/mariadb:${{ github.sha }}
+    - name: Push the Docker image with version string  
+      run: docker push ghcr.io/fleetmixer/mariadb:${{ github.sha }}
       
