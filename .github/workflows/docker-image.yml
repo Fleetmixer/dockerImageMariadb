@@ -18,7 +18,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ghcr.io/fleetmixer/mariadb:${{ github.head_ref }}.${{ github.sha }}
+      run: docker build . --file Dockerfile --tag ghcr.io/fleetmixer/mariadb:${{ github.sha }}
     - name: Push the Docker image latest  
       run: docker push ghcr.io/fleetmixer/mariadb:${{ github.sha }}
       
