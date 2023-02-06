@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag ghcr.io/fleetmixer/mariadb:${{ github.sha }}
-    - name: Login to ghcr.io
+    - name: Login to ghcr.io 
       run: echo $GITHUB_TOKEN | docker login ghcr.io -u fleetmixer --password-stdin
       env:
         GITHUB_TOKEN: ${{ github.token }}
